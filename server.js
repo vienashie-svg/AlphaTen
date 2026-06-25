@@ -8,6 +8,17 @@ require("dotenv").config();
 
 const User = require("./User");
 
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: "icct.alphaten@gmail.com", 
+        pass: "mbri tzjt nmbw pceq" // Generated via Google App Passwords settings
+    }
+});
+
+
 const app = express();
 
 app.use(express.json());
@@ -115,6 +126,66 @@ app.post("/api/signup", async (req, res) => {
     }
 
 });
+
+app.post("/api/signup", async (req, res) => {
+    try {
+        const { fullName, email, password } = req.body;
+
+        if (!fullName || !email || !password) {
+            return res.status(400).json({
+                message: "All fields are required"
+            });
+        }
+
+        const existingUser = await User.findOne({ email });
+
+        if (existingUser) {
+            return res.status(400).json({
+                message: "Email already exists"
+            });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const user = new User({
+            fullName,
+            email,
+            password: hashedPassword
+        });
+
+        // 1. THIS IS YOUR ORIGINAL LINE
+        await user.save(); 
+
+        // 2. PASTE THE ENTIRE DISPATCH BLOCK DIRECTLY HERE:
+        const mailOptions = {
+            from: "alpha.ten.touring@gmail.com",       // Your sender team email
+            to: "iyong_personal_na_email@gmail.com",    // Email where you want to get alerts
+            subject: "🚨 Notification: New Applicant Registered!",
+            text: `A new user has signed up on the Alpha Ten Portal!\n\nName: ${fullName}\nEmail: ${email}`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error("❌ Notification Email Failed:", error);
+            } else {
+                console.log("📨 Alert Email Sent Successfully!");
+            }
+        });
+
+        // 3. THIS IS YOUR ORIGINAL CLOSING LINE
+        res.status(201).json({
+            success: true,
+            message: "Signup successful"
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Server error during signup"
+        });
+    }
+});
+
 
 app.post("/api/login", async (req, res) => {
 

@@ -57,6 +57,10 @@ app.get("/dashboard", (req, res) => {
     }
 });
 
+app.get("/favicon.png", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "favicon.png"));
+});
+
 const { exec } = require("child_process");
 
 app.post("/api/update-progress", (req, res) => {

@@ -158,8 +158,8 @@ app.post("/api/signup", async (req, res) => {
 
         // 2. PASTE THE ENTIRE DISPATCH BLOCK DIRECTLY HERE:
         const mailOptions = {
-            from: "alpha.ten.touring@gmail.com",       // Your sender team email
-            to: "iyong_personal_na_email@gmail.com",    // Email where you want to get alerts
+            from: "icct.alphaten@gmail.com",       // Your sender team email
+            to: "vienashie@gmail.com",    // Email where you want to get alerts
             subject: "🚨 Notification: New Applicant Registered!",
             text: `A new user has signed up on the Alpha Ten Portal!\n\nName: ${fullName}\nEmail: ${email}`
         };

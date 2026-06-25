@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICCT ANTIPOLO - Contact</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+
+header{
+    background:#a36ad2;
+    color:white;
+    padding:10px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:18px;
+    font-weight:bold;
+    margin-left:20px;
+    cursor:default;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    position:relative;
+    font-size:16px;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:white;
+    transition:width .3s ease;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.hero{
+    height:400px;
+    background:
+    linear-gradient(rgba(0,0,0,.5),
+    rgba(0,0,0,.5)),
+    url("/Users/marklaurencebernal/Downloads/download.jpeg") no-repeat center center;
+
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+    color:#a36ad2;
+    text-align:center;
+    margin-bottom:25px;
+    font-size:40px;
+}
+
+.card p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:30px;
+}
+
+form input,
+form textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+form textarea{
+    resize:none;
+}
+
+form button{
+    padding:15px;
+    border:none;
+    background:#a36ad2;
+    color:white;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+form button:hover{
+    background:#8d55bd;
+}
+
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+<body>
+
+
+<header>
+
+    <div class="logo">
+        ICCT ANTIPOLO
+    </div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        CONTACT US
+    </h1>
+
+    <p>
+        We would love to hear from you.
+    </p>
+
+</section>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            Have questions or inquiries?
+        </p>
+
+        <p>
+            <strong>Email:</strong> icct.alphaten@gmail.com
+        </p>
+
+        <p>
+            <strong>Phone:</strong> (+63) 994 352 9308
+        </p>
+
+        <p>
+            <strong>Visit:</strong> ICCT Antipolo Campus
+        </p>
+
+        <h3 style="color:#a36ad2; margin-top:30px; margin-bottom:20px;">
+            Send Us a Message
+        </h3>
+
+        <form id="contactForm">
+
+            <input type="text"
+                   name="user_name"
+                   placeholder="Enter your name"
+                   required>
+
+            <input type="email"
+                   name="user_email"
+                   placeholder="Enter your email"
+                   required>
+
+            <textarea rows="6"
+                    name="message"
+                    placeholder="Type your message here..."
+                    required></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>
+        © 2026 ICCT ANTIPOLO. All Rights Reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+// PUT YOUR PUBLIC KEY HERE
+emailjs.init("Xboryrkg31MlA2vOd");
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_wctb37d",
+        "template_jrxdb8l",
+        this
+    )
+    .then(() => {
+
+        alert("Message sent successfully!");
+        this.reset();
+
+    })
+    .catch((error) => {
+
+        alert("Failed to send message.");
+        console.log(error);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

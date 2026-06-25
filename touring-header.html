@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICCT ANTIPOLO - Home</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#a36ad2;
+    color:white;
+    padding:10px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    user-select:none;
+}
+
+.logo{
+    font-size:18px;
+    font-weight:bold;
+    margin-left:20px;
+    cursor:default;
+    user-select:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    position:relative;
+    font-size:16px;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:white;
+    transition:width 0.3s ease;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.hero{
+    height:400px;
+    background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url(https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/513919849_23945462668446558_8204841316519524427_n.jpg?stp=dst-jpg_tt6&cstp=mx1775x1265&ctp=s1775x1265&_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFYyOqC7RioQr3J2Bh6jeB3oMz8yxhJcjegzPzLGElyNz_NbNijO9x3T6y5LFKMBTzJwNISDdURrvfy4P2T5LB0&_nc_ohc=VDTZNKH-JP8Q7kNvwEevKZ8&_nc_oc=AdroAGvNPHhLBRnOLUOCK9IYCR-2FAnglRjpwBBhr8eQH_ntundAKpp2VWVmW5-3cwA&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=ixe8rI3zprfJoQAsvUchwg&_nc_ss=7b2a8&oh=00_Af8QcY0h9IuxBp4veFHGx9MDbb7nrn-q1HSKN30CEDN08Q&oe=6A389A21) no-repeat;
+    background-size:cover;
+    background-position:center .50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-align:center;
+    margin-bottom:40px;
+    cursor:grab;
+}
+
+.hero:active{
+    cursor:grabbing;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.container{
+    width:90%;
+    margin:40px auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#a36ad2;
+    margin-bottom:10px;
+}
+
+
+
+.join-section{
+    text-align:center;
+    margin:40px 0;
+}
+
+.join-link{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 20px;
+    background:#a36ad2;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.join-link:hover{
+    background:#a36ad2;
+}
+
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+    margin-top:40px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        ICCT ANTIPOLO
+    </div>
+
+
+    <nav>
+
+        <a href="home.html">Home</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+</header>
+
+
+
+<section class="hero">
+
+    <h1>
+        Welcome to ICCT ANTIPOLO
+    </h1>
+
+    <p>
+        Your Campus News, Updates, and Community Portal
+    </p>
+
+</section>
+
+
+
+<div class="container">
+
+
+    <h2 style="margin-bottom:20px;">
+        Latest Features
+    </h2>
+
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>
+                Campus News
+            </h3>
+
+            <p>
+                Stay updated with the latest happenings around ICCT Colleges.
+            </p>
+
+        </div>
+        
+
+        <div class="card">
+
+            <h3>
+                Announcements
+            </h3>
+
+            <p>
+                Important school announcements and academic updates.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Student Events
+            </h3>
+
+            <p>
+                Discover upcoming events, activities, and competitions.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Student Spotlight
+            </h3>
+
+            <p>
+                Meet outstanding students and celebrate achievements.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<div class="join-section">
+
+    <h3>
+        Want to join us?
+    </h3>
+
+    <p>
+        Click here now!
+    </p>
+
+
+    <a href="file:///Users/marklaurencebernal/Desktop/Touring%20Website%202/register.html" target="_blank" class="join-link">
+        Log-in/Sign-up
+    </a>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+    <p>
+        © 2026 ICCT ANTIPOLO. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+
+
+<script>
+
+function logout(){
+
+    if(confirm("Are you sure you want to logout?")){
+
+        localStorage.removeItem("loggedIn");
+
+        window.location.href="log-in.html";
+
+    }
+
+}
+
+</script>
+
+
+
+</body>
+</html>

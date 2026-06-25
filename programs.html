@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICCT Programs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#a36ad2;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    background:#a36ad2;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:40px 0;
+}
+
+.section-title{
+    font-size:32px;
+    color:#a36ad2;
+    margin-bottom:30px;
+}
+
+.program-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+}
+
+.program-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.program-card:hover{
+    transform:translateY(-5px);
+}
+
+.program-card img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.program-content{
+    padding:20px;
+}
+
+.program-content h2{
+    color:#a36ad2;
+    margin-bottom:10px;
+}
+
+.program-content p{
+    color:#555;
+    line-height:1.6;
+}
+
+.program-list{
+    background:white;
+    margin-top:40px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.program-list h2{
+    color:#a36ad2;
+    margin-bottom:20px;
+}
+
+.program-list ul{
+    margin-left:20px;
+}
+
+.program-list li{
+    margin-bottom:8px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:#a36ad2;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.back-btn:hover{
+    background:#8e5bc0;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        ICCT ANTIPOLO
+    </div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+    <h1>ICCT Programs</h1>
+    <p>Explore Our Degree Programs</p>
+</section>
+
+<div class="container">
+
+    <h2 class="section-title">Featured Programs</h2>
+
+    <div class="program-grid">
+
+        <div class="program-card">
+            <img src="/Users/marklaurencebernal/Downloads/bsit.jpeg">
+
+            <div class="program-content">
+                <h2>BSIT</h2>
+                <p>
+                    Bachelor of Science in Information Technology.
+                    Focuses on programming, networking,
+                    cybersecurity, databases, and software development.
+                </p>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <img src="/Users/marklaurencebernal/Downloads/bsc.jpeg" alt="BSC">
+            <div class="program-content">
+                <h2>BSC</h2>
+                <p>
+                    Bachelor of Science in Criminology.
+                    Prepares students for careers in law enforcement,
+                    criminal investigation, and public safety.
+                </p>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <img src="/Users/marklaurencebernal/Downloads/bstm.jpeg" alt="BSTM">
+            <div class="program-content">
+                <h2>BSTM</h2>
+                <p>
+                    Bachelor of Science in Tourism Management.
+                    Focuses on tourism operations, travel services,
+                    hospitality, and event management.
+                </p>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <img src="/Users/marklaurencebernal/Downloads/bsa.jpeg" alt="BSA">
+            <div class="program-content">
+                <h2>BSA</h2>
+                <p>
+                    Bachelor of Science in Accountancy.
+                    Develops expertise in accounting,
+                    auditing, taxation, and financial management.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="program-list">
+
+        <h2>Other Programs Offered</h2>
+
+        <ul>
+            <li>AB Communication</li>
+            <li>AB English</li>
+            <li>BS Psychology</li>
+            <li>BS Computer Science</li>
+            <li>BS Information Systems</li>
+            <li>BS Hospitality Management</li>
+            <li>BS Nursing</li>
+            <li>BS Medical Technology</li>
+            <li>BS Radiologic Technology</li>
+            <li>BS Business Administration</li>
+            <li>BS Management Accounting</li>
+            <li>BS Legal Management</li>
+            <li>BS Public Administration</li>
+            <li>BS Computer Engineering</li>
+            <li>BS Electronics Engineering</li>
+        </ul>
+
+        <a href="home.html" class="back-btn">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 ICCT ANTIPOLO. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

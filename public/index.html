@@ -1,40 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>School Portal - Login / Signup</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICCT Antipolo - Campus Tour</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#a36ad2;
+    color:white;
+    padding:10px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:18px;
+    font-weight:bold;
+    margin-left:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:white;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.hero{
+    height:350px;
+    background:
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url("/Users/marklaurencebernal/Downloads/cc.png")
+    no-repeat center center;
+    background-position:center 2%;
+
+    background-size:cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 0;
+}
+
+.section-title{
+    text-align:center;
+    color:#a36ad2;
+    margin-bottom:40px;
+}
+
+.tour-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.tour-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.tour-card:hover{
+    transform:translateY(-10px);
+}
+
+.tour-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.tour-content{
+    padding:20px;
+}
+
+.tour-content h3{
+    color:#a36ad2;
+    margin-bottom:10px;
+}
+
+.tour-content p{
+    color:#555;
+    line-height:1.6;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+    margin-top:40px;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="auth-container">
-    <div class="auth-box">
-      <h1>School Portal</h1>
 
-      <div class="tabs">
-        <button id="showLogin" class="active">Login</button>
-        <button id="showSignup">Signup</button>
-      </div>
+<header>
 
-      <form id="loginForm" class="form-section">
-        <h2>Login</h2>
-        <input type="email" id="loginEmail" placeholder="Email" required />
-        <input type="password" id="loginPassword" placeholder="Password" required />
-        <button type="submit">Login</button>
-      </form>
+<div class="logo">
+ICCT ANTIPOLO
+</div>
 
-      <form id="signupForm" class="form-section hidden">
-        <h2>Signup</h2>
-        <input type="text" id="signupName" placeholder="Full Name" required />
-        <input type="email" id="signupEmail" placeholder="Email" required />
-        <input type="password" id="signupPassword" placeholder="Password" required />
-        <button type="submit">Create Account</button>
-      </form>
+<nav>
+<a href="home.html">Home</a>
+<a href="tour.html">Tour</a>
+<a href="about.html">About</a>
+<a href="events.html">Newsletter</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-      <p id="message"></p>
-    </div>
-  </div>
+</header>
 
-  <script src="app.js"></script>
+<section class="hero">
+
+<h1>Campus Tour</h1>
+
+<p>
+Explore ICCT Antipolo's Facilities and Learning Spaces
+</p>
+
+</section>
+
+<div class="container">
+
+<h2 class="section-title">
+Explore Our Campus
+</h2>
+
+<div class="tour-grid">
+
+<div class="tour-card">
+
+<img src="/Users/marklaurencebernal/Downloads/Antipolo.png"
+alt="Main Building">
+
+<div class="tour-content">
+<h3>Main Building</h3>
+
+<p>
+The center of academic excellence where students attend classes and participate in campus activities.
+</p>
+
+</div>
+
+</div>
+
+<div class="tour-card">
+
+<img src="/Users/marklaurencebernal/Downloads/724817840_1410310934237322_2930300729523540365_n.jpg"
+alt="Computer Laboratory">
+
+<div class="tour-content">
+
+<h3>Computer Laboratory</h3>
+
+<p>
+Modern computer laboratories equipped with the latest technology for hands-on learning.
+</p>
+
+</div>
+
+</div>
+
+<div class="tour-card">
+
+<img src="/Users/marklaurencebernal/Downloads/723662634_784132838120261_7884885694905689515_n.png"
+alt="GYM">
+
+<div class="tour-content">
+
+<h3>Campus GYM</h3>
+
+<p>
+ Multi-purpose facility used for sports, physical education classes, school events, and student activities, promoting fitness, teamwork, and school spirit.
+</p>
+
+</div>
+
+</div>
+
+<div class="tour-card">
+
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+alt="Student Lounge">
+
+<div class="tour-content">
+
+<h3>Student Lounge</h3>
+
+<p>
+A welcoming space where students can relax, collaborate, and build friendships.
+</p>
+
+</div>
+
+</div>
+
+<div class="tour-card">
+
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+alt="Campus Grounds">
+
+<div class="tour-content">
+
+<h3>Campus Grounds</h3>
+
+<p>
+Beautiful open spaces where students gather, study, and enjoy campus life.
+</p>
+
+</div>
+
+</div>
+
+<div class="tour-card">
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.273988332704!2d121.16707997445471!3d14.583457377497467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b8aaa2a67be9%3A0xfc1aa4217b71bb46!2sICCT%20-%20Antipolo%20Campus!5e0!3m2!1sen!2sph!4v1781791535553!5m2!1sen!2sph"
+width="100%"
+height="250"
+style="border:0;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+<div class="tour-content">
+
+<h3>Campus Location</h3>
+
+<p>
+Find ICCT Antipolo easily using Google Maps and get directions to the campus.
+</p>
+
+</div>
+
+</div>
+
+<div> 
+
+</div>
+
+<footer>
+
+<p>
+© 2026 ICCT ANTIPOLO. All Rights Reserved.
+</p>
+
+</footer>
+
 </body>
 </html>

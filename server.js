@@ -68,6 +68,35 @@ app.post("/api/signup", async (req, res) => {
     }
 });
 
+app.post("/api/contact", (req, res) => {
+    const { name, email, message } = req.body;
+
+    // Tiyakin na may email at mensaheng ipinadala mula sa contact page
+    if (!email || !message) {
+        return res.status(400).json({ success: false, message: "Missing required fields" });
+    }
+
+    const mailOptions = {
+        from: "icct.alphaten@gmail.com", // Kapareho ng email sender ninyo sa signup
+        to: "vienashie@gmail.com",       // Ang tatanggap ng mensahe mula sa contact page
+        subject: "📥 New Contact Message from DecaPortal Visitor",
+        text: `Name: ${name || "Anonymous"}\nEmail: ${email}\n\nMessage:\n${message}`
+    };
+
+    // Gamitin ang inyong transporter para ipadala ang email
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("❌ Contact Email Failed:", error);
+            return res.status(500).json({ success: false, message: "Mailer engine error" });
+        }
+        
+        console.log("📨 Contact Message Sent!");
+        res.status(200).json({ success: true, message: "Message sent successfully" });
+    });
+});
+// ─────────────────────────────────────────────────────────────────
+
+
 app.post("/api/login", async (req, res) => {
     try {
         const { email, password } = req.body;

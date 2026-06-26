@@ -326,7 +326,7 @@ app.get("/api/profile", authMiddleware, async (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 // ISULAT ITO SA PINAKA-ILALIM NG SERVER.JS (BAGO MAG APP.LISTEN):
-app.get("*", (req, res) => {
+app.get(".*", (req, res) => {
     // Kung may maghanap ng link na hindi rehistrado, ibalik sila sa Home Page nang ligtas
     res.sendFile(path.join(__dirname, "public", "home.html"));
 });

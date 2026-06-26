@@ -37,8 +37,24 @@ mongoose.connect(process.env.MONGO_URI)
     console.error("❌ MongoDB Error:", err);
 });
 
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "home.html"));
+});
+
+app.get("/tour", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "tour.html"));
+});
+
+app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "about.html"));
+});
+
+app.get("/events", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "events.html"));
+});
+
+app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "contact.html"));
 });
 
 
